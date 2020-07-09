@@ -92,9 +92,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 		initRemoveButtons();
 	}
 
-	private void createDialogForm(Department obj, String absoluteName, Stage parentStage) { // função para carregar a
-																							// janela do formulario para
-																							// preencher um novo
+	private void createDialogForm(Department obj, String absoluteName, Stage parentStage) { // função para carregar a																				// preencher um novo
 																							// departamento
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
@@ -117,6 +115,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 			dialogStage.showAndWait();
 
 		} catch (IOException e) {
+			e.getStackTrace();
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}
